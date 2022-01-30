@@ -1,0 +1,15 @@
+[production]
+DEBUG = false
+TITLE = 'appconvert'
+
+EXTENSIONS = [
+    "appconvert.blueprints.webui:init_app",
+]
+
+[development]
+DEBUG = true
+TITLE = 'appconvert'
+
+EXTENSIONS = [
+    "appconvert.blueprints.webui:init_app",
+]

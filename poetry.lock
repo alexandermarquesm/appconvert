@@ -100,6 +100,23 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "dynaconf"
+version = "3.1.7"
+description = "The dynamic configurator for your Python Project"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+all = ["redis", "ruamel.yaml", "configobj", "hvac"]
+configobj = ["configobj"]
+ini = ["configobj"]
+redis = ["redis"]
+toml = ["toml"]
+vault = ["hvac"]
+yaml = ["ruamel.yaml"]
+
+[[package]]
 name = "executing"
 version = "0.8.2"
 description = "Get the currently executing AST node of a frame, and other information"
@@ -519,7 +536,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.12"
-content-hash = "2766977147e402cb0eeb2416e9842345fef02755bb4e486e9dc2f2f291a20983"
+content-hash = "2d83767d97d383e2e163a3fade61450a1f20439b607fdb164cbe5ae0021f3512"
 
 [metadata.files]
 appnope = [
@@ -578,6 +595,10 @@ colorama = [
 decorator = [
     {file = "decorator-5.1.1-py3-none-any.whl", hash = "sha256:b8c3f85900b9dc423225913c5aace94729fe1fa9763b38939a95226f02d37186"},
     {file = "decorator-5.1.1.tar.gz", hash = "sha256:637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"},
+]
+dynaconf = [
+    {file = "dynaconf-3.1.7-py2.py3-none-any.whl", hash = "sha256:f52fe5db7622da56a552275e8f64e4df46e3b4ae11158831b042e8ba2f6d1c96"},
+    {file = "dynaconf-3.1.7.tar.gz", hash = "sha256:e9d80b46ba4d9372f2f40c812594c963f74178140c0b596e57f2881001fc4d35"},
 ]
 executing = [
     {file = "executing-0.8.2-py2.py3-none-any.whl", hash = "sha256:32fc6077b103bd19e6494a72682d66d5763cf20a106d5aa7c5ccbea4e47b0df7"},

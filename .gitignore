@@ -9,3 +9,5 @@ docs/_build
 __pycache__
 *.py[cod]
 *$py.class
+# Ignore dynaconf secret files
+.secrets.*
