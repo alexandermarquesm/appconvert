@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "appconvert"
-version = "0.1.0"
+version = "1.0.0"
 description = "Helping people understand more about cryptocurrencies"
 authors = ["Alexander Marques <alexandermarquesoficial@gmail.com>"]
 license = "MIT"
