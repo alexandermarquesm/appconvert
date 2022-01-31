@@ -2,14 +2,23 @@
 DEBUG = false
 TITLE = 'appconvert'
 
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+SQLALCHEMY_DATABASE_URI = ''
+
 EXTENSIONS = [
+    "appconvert.ext.database:init_app",
     "appconvert.blueprints.webui:init_app",
 ]
+
 
 [development]
 DEBUG = true
 TITLE = 'appconvert'
 
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
+
 EXTENSIONS = [
+    "appconvert.ext.database:init_app",
     "appconvert.blueprints.webui:init_app",
 ]
