@@ -1,0 +1,79 @@
+:root {
+    --primary: #1E1E1E ;
+    --secondary: #282828;
+    --color-selected: #1E1E1E;
+
+    --color-font-primary: rgb(197, 197, 197);
+    --color-font-strong: rgb(230, 230, 230);
+    font-family: "Roboto";
+    font-size: 1.3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estrutura */
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas:
+    "SIDEBAR MAIN"
+    "SIDEBAR MAIN"
+    "SIDEBAR MAIN";
+}
+
+.l-sidebar {
+    height: 100vh;
+    background: var(--secondary);
+}
+
+.logotipo {
+    margin-top: 10px;
+    height: 100px;
+    width: 100%;
+}
+
+.menu {
+    list-style: none;
+    margin: 40px 20px 0px 20px;
+}
+
+.menu__item {
+    height: 35px;
+    line-height: 35px;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.menu__item--selected{
+    background: var(--color-selected);
+}
+
+.menu__item:hover .menu__link {
+    color: var(--color-font-strong);
+}
+
+.menu__link {
+    color: var(--color-font-primary);
+    display: block;
+    text-decoration: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+
+/* ==================================== */
+/* MAIN */
+/* ==================================== */
+
+main {
+    height: 100vh;
+    background: var(--primary);
+}
