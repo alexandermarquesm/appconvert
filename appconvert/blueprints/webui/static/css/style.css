@@ -1,7 +1,7 @@
 :root {
     --primary: #1E1E1E ;
     --secondary: #282828;
-    --color-selected: #1E1E1E;
+    --color-selected: #333333;
 
     --color-font-primary: rgb(197, 197, 197);
     --color-font-strong: rgb(230, 230, 230);
@@ -12,21 +12,29 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
-/* Estrutura */
+/* ==================================== */
+/* ESTRUTURA DA PAGINA*/
+/* ==================================== */  
+
 .container {
     width: 100vw;
     height: 100vh;
 
     display: grid;
     grid-template-columns: 15vw 85vw;
-    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-rows: 15vh 85vh;
     grid-template-areas:
     "SIDEBAR MAIN"
     "SIDEBAR MAIN"
     "SIDEBAR MAIN";
 }
+
+/* ==================================== */
+/* SIDEBAR */
+/* ==================================== */ 
 
 .l-sidebar {
     height: 100vh;
@@ -34,8 +42,8 @@
 }
 
 .logotipo {
-    margin-top: 10px;
-    height: 100px;
+    margin: 20px auto 0 auto;
+    height: 10vh;
     width: 100%;
 }
 
@@ -48,11 +56,10 @@
     height: 35px;
     line-height: 35px;
     border-radius: 10px;
-    padding-left: 20px;
 }
 
 .menu__item--selected{
-    background: var(--color-selected);
+    background: var(--primary);
 }
 
 .menu__item:hover .menu__link {
@@ -61,19 +68,228 @@
 
 .menu__link {
     color: var(--color-font-primary);
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
     text-decoration: none;
     border-radius: 10px;
     position: relative;
+    padding: 0 30px;
 }
 
-
-
 /* ==================================== */
-/* MAIN */
+/* MAIN HEADER CATEGORIES CRYPTOGAMES */
 /* ==================================== */
 
 main {
     height: 100vh;
+    width: 85vw;
     background: var(--primary);
+}
+
+.l-header {
+    width: 85vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333333;
+    box-sizing: border-box;
+    padding: 0 45px;
+    gap: 0 40px;
+}
+
+.header__widgets {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.header__input {
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    background: var(--secondary);
+    color: var(--color-font-primary);
+    position: relative;
+}
+
+.header__arrow {
+    height: 100%;
+    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--primary) 40%
+    );
+    cursor: pointer;
+    position: absolute;
+    touch-action: pan-x;
+}
+
+.arrow-left {
+    display: none;
+    z-index: 2;
+    transform: rotateY(180deg);
+    left: 0;
+
+}
+
+.arrow-right {
+    z-index: 2;
+    right: 0;
+}
+
+.header__arrow svg {
+    transform: translate(50%, 0);
+    height: 15px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.header__categories {
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+
+.header__lista {
+    overflow: hidden;
+    list-style: none;
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header__categories::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+}
+
+.header__item {
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 10px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.header__item--style{
+    color: var(--color-font-primary);
+    background: var(--color-selected);
+}
+
+/* ==================================== */
+/* MAIN SECTION CRYPTOGAMES */
+/* ==================================== */
+
+.section__cryptogames {
+    width: 85vw;
+    height: 85vh;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.section__cryptogames::-webkit-scrollbar {
+    width: 0px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px 42px;
+    padding: 45px 45px;
+}
+  
+.scene {
+    width: 180px;
+    height: 130px;
+    perspective: 600px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    border-radius: 25px;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: var(--color-font-primary);
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    pointer-events: none;
+}
+
+.card__face img {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card__name {
+    position: absolute;
+    font-size: 20px;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 35px);
+}
+
+.card__footer {
+    position: absolute;
+    background: var(--color-selected);
+    font-size: 18px;
+    width: 100%;
+    bottom: 0;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.card__face--front, .card__face--back{
+    background: #282828;
+    border-radius: 25px;
+    border: 1px solid rgba(95, 95, 95, 0.2);
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+}
+
+.card__face--back div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+}
+
+.card__face--back div span {
+    font-size: 16px;
+    color: var(--color-font-primary);
 }

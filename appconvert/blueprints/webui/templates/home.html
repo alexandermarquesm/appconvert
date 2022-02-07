@@ -13,7 +13,8 @@
 <body>
     <div class="container">
         <sidebar class="l-sidebar">
-            <svg class="logotipo" width="250" height="100" viewBox="0 0 250 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="logotipo" width="250" height="100" viewBox="0 0 250 100" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <rect width="250" height="100" fill-opacity="0.1" />
                 <path
                     d="M145.3 50C145.3 77.6142 122.847 100 95.1501 100C67.4529 100 45 77.6142 45 50C45 22.3858 67.4529 0 95.1501 0C122.847 0 145.3 22.3858 145.3 50Z"
@@ -24,7 +25,7 @@
             </svg>
             <ul class="menu">
                 <li class="menu__item menu__item--selected">
-                    <a class="menu__link" href="#">Convert</a>
+                    <a class=" menu__link" href="#">Convert</a>
                 </li>
                 <li class="menu__item">
                     <a class="menu__link" href="#">Defi</a>
@@ -39,6 +40,7 @@
             {% endblock %}
         </main>
     </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>

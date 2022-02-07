@@ -2,6 +2,132 @@
 
 {% block content %}
 
-<h1>Cryptogames test</h1>
+<header class="l-header">
+    <input class="header__input" type="text" placeholder="search">
+    <div class="header__widgets">
+        <div class="header__arrow arrow-left">
+            <svg width="27" height="48" viewBox="0 0 27 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="27" height="48" />
+                <path
+                    d="M26.0545 21.6955L5.51077 0.954573C4.25011 -0.318191 2.20616 -0.318191 0.945498 0.954573C-0.315166 2.22734 -0.315166 4.29089 0.945498 5.56366L19.2066 24L0.945498 42.4363C-0.315166 43.7091 -0.315166 45.7727 0.945498 47.0454C2.20616 48.3182 4.25011 48.3182 5.51077 47.0454L26.0545 26.3045C27.3152 25.0318 27.3152 22.9682 26.0545 21.6955Z"
+                    fill="white" />
+            </svg>
+        </div>
+        <div class="header__categories">
+            <ol class="header__lista">
+                <li class="header__item header__item--style">metaverse</li>
+                <li class="header__item header__item--style">metaverse</li>
+                <li class="header__item header__item--style">NFT</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+                <li class="header__item header__item--style">Play to Earn</li>
+            </ol>
+        </div>
+        <div class="header__arrow arrow-right">
+            <svg width="27" height="48" viewBox="0 0 27 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="27" height="48" />
+                <path
+                    d="M26.0545 21.6955L5.51077 0.954573C4.25011 -0.318191 2.20616 -0.318191 0.945498 0.954573C-0.315166 2.22734 -0.315166 4.29089 0.945498 5.56366L19.2066 24L0.945498 42.4363C-0.315166 43.7091 -0.315166 45.7727 0.945498 47.0454C2.20616 48.3182 4.25011 48.3182 5.51077 47.0454L26.0545 26.3045C27.3152 25.0318 27.3152 22.9682 26.0545 21.6955Z"
+                    fill="white" />
+            </svg>
+        </div>
+    </div>
+</header>
+<section class="section__cryptogames">
+    <div class="cards">
 
+        <div class="scene scene--card">
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src="{{ url_for('static', filename='images/games/SAND.png')}}" alt="">
+                    <span class="card__name">The Sandbox</span>
+                    <div class="card__footer">
+                        <span>$5.37</span>
+                    </div>
+                </div>
+
+                <div class="card__face card__face--back">
+                    <img src="{{ url_for('static', filename='images/games/SAND.png')}}" alt="">
+                    <div class="card__index">
+                        <span>ticker</span>
+                        <span>address</span>
+                        <span>marketcap</span>
+                        <span>blockchain</span>
+                    </div>
+
+                    <div class="card__info">
+                        <span>SAND</span>
+                        <span>copy</span>
+                        <span>3.533 B</span>
+                        <span>ethereum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scene scene--card">
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src="{{ url_for('static', filename='images/games/SAND.png')}}" alt="">
+                    <span class="card__name">The Sandbox</span>
+                    <div class="card__footer">
+                        <span>$5.37</span>
+                    </div>
+                </div>
+
+                <div class="card__face card__face--back">
+                    <img src="{{ url_for('static', filename='images/games/SAND.png')}}" alt="">
+                    <div class="card__index">
+                        <span>ticker</span>
+                        <span>address</span>
+                        <span>marketcap</span>
+                        <span>blockchain</span>
+                    </div>
+
+                    <div class="card__info">
+                        <span>SAND</span>
+                        <span>copy</span>
+                        <span>3.533 B</span>
+                        <span>ethereum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scene scene--card">
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src="{{ url_for('static', filename='images/games/SAND.png')}}" alt="">
+                    <span class="card__name">The Sandbox</span>
+                    <div class="card__footer">
+                        <span>$5.37</span>
+                    </div>
+                </div>
+
+                <div class="card__face card__face--back">
+                    <img src="{{ url_for('static', filename='images/games/SAND.png')}}" alt="">
+                    <div class="card__index">
+                        <span>ticker</span>
+                        <span>address</span>
+                        <span>marketcap</span>
+                        <span>blockchain</span>
+                    </div>
+
+                    <div class="card__info">
+                        <span>SAND</span>
+                        <span>copy</span>
+                        <span>3.533 B</span>
+                        <span>ethereum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
