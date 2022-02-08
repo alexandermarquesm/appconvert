@@ -2,6 +2,116 @@
 
 {% block content %}
 
-<h1>Convert test</h1>
+<section class="section__convert">
 
+    <div class="box-card">
+        <div class="title">
+            <span>Converter</span>
+        </div>
+        <div class="content-swap">
+            <div class="token_1">
+                <div class="entries-inputs">
+                    <div class="button-dropdown 1">
+                        <button>
+                            <img src="{{ url_for('static', filename='images/tokens/BTC.png') }}" width="28px"
+                                height="28px">
+                            <span>BTC</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="#000000">
+                                <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
+                                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />
+                            </svg>
+                        </button>
+                        <div class="dropdown">
+                            <span id="search">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M74.53333,17.2c-31.59642,0 -57.33333,25.73692 -57.33333,57.33333c0,31.59642 25.73692,57.33333 57.33333,57.33333c13.73998,0 26.35834,-4.87915 36.24766,-12.97839l34.23203,34.23203c1.43802,1.49778 3.5734,2.10113 5.5826,1.57735c2.0092,-0.52378 3.57826,-2.09284 4.10204,-4.10204c0.52378,-2.0092 -0.07957,-4.14458 -1.57735,-5.5826l-34.23203,-34.23203c8.09924,-9.88932 12.97839,-22.50768 12.97839,-36.24766c0,-31.59642 -25.73692,-57.33333 -57.33333,-57.33333zM74.53333,28.66667c25.39937,0 45.86667,20.4673 45.86667,45.86667c0,25.39937 -20.46729,45.86667 -45.86667,45.86667c-25.39937,0 -45.86667,-20.46729 -45.86667,-45.86667c0,-25.39937 20.4673,-45.86667 45.86667,-45.86667z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <input type="text" id="search">
+                            </span>
+
+                            <span class="found">
+                                <img src="" alt="" width="28" height="28">
+                                <span></span>
+                            </span>
+
+                            {% for token in tokens %}
+                            <span class="token">
+                                <img src="{{ url_for('static', filename=token['path_icon']) }}" width="28" height="28">
+                                <span>{{ token['name'] }}</span>
+                            </span>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <input name="amount" type="text" placeholder="0.0" maxlength="8">
+                </div>
+            </div>
+            <div class="icon-swap">
+                <svg class="svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M57.856 427.008h908.8c31.744 0 57.856-26.112 57.856-57.856 0-17.408-7.68-33.28-20.992-44.544-3.072-4.096-7.168-7.68-11.264-10.752l-339.456-238.08c-26.112-18.432-61.952-12.288-80.384 13.824-18.432 26.112-11.776 61.952 14.336 80.384l201.216 141.312H57.856C26.112 311.808 0 337.92 0 369.664s26.112 57.344 57.856 57.344zM966.144 596.992H57.856c-31.744 0-57.856 26.112-57.856 57.856 0 17.408 7.68 33.28 20.992 44.544 3.584 4.096 7.168 7.68 11.264 10.752l339.456 238.08c9.728 6.656 20.992 10.24 33.28 10.24 18.944 0 36.352-9.216 47.104-24.576 8.704-12.8 12.288-27.648 9.728-43.008s-11.264-28.16-23.552-37.376l-201.216-141.312h729.6c31.744 0 57.856-26.112 57.856-57.856-0.512-31.744-26.624-57.344-58.368-57.344z" />
+                </svg>
+            </div>
+            <div class="token_2">
+                <div class="entries-inputs">
+                    <div class="button-dropdown 2">
+                        <button class="choice-btn">
+                            <img src="{{ url_for('static', filename='images/tokens/USDT.png') }}" width="28px"
+                                height="28px">
+                            <span>USDT</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="#000000">
+                                <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
+                                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />
+                            </svg>
+                        </button>
+                        <div class="dropdown">
+                            <span id="search">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M74.53333,17.2c-31.59642,0 -57.33333,25.73692 -57.33333,57.33333c0,31.59642 25.73692,57.33333 57.33333,57.33333c13.73998,0 26.35834,-4.87915 36.24766,-12.97839l34.23203,34.23203c1.43802,1.49778 3.5734,2.10113 5.5826,1.57735c2.0092,-0.52378 3.57826,-2.09284 4.10204,-4.10204c0.52378,-2.0092 -0.07957,-4.14458 -1.57735,-5.5826l-34.23203,-34.23203c8.09924,-9.88932 12.97839,-22.50768 12.97839,-36.24766c0,-31.59642 -25.73692,-57.33333 -57.33333,-57.33333zM74.53333,28.66667c25.39937,0 45.86667,20.4673 45.86667,45.86667c0,25.39937 -20.46729,45.86667 -45.86667,45.86667c-25.39937,0 -45.86667,-20.46729 -45.86667,-45.86667c0,-25.39937 20.4673,-45.86667 45.86667,-45.86667z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <input type="text" id="search">
+                            </span>
+
+                            {% for token in tokens %}
+                            <span class="token">
+                                <img src="{{ url_for('static', filename=token['path_icon']) }}" width="28" height="28">
+                                <span>{{ token['name'] }}</span>
+                            </span>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <input name="amount_2" type="text" placeholder="0.0" disabled>
+                </div>
+            </div>
+        </div>
+        <button class="btn-send">
+            <span>Convert</span>
+        </button>
+    </div>
+</section>
 {% endblock %}

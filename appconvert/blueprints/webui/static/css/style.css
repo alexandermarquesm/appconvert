@@ -2,7 +2,15 @@
     --primary: #1E1E1E ;
     --secondary: #282828;
     --color-selected: #333333;
+    
+    /*
+    --primary-card-convert: #191b1f;
+    --secondary-card-convert: #212429;
+    */
 
+    --primary-card-convert: #191b1f;
+    --secondary-card-convert: #212429;
+    
     --color-font-primary: rgb(197, 197, 197);
     --color-font-strong: rgb(230, 230, 230);
     font-family: "Roboto";
@@ -292,4 +300,217 @@ main {
 .card__face--back div span {
     font-size: 16px;
     color: var(--color-font-primary);
+}
+
+/* ==================================== */
+/* MAIN SECTION CONVERT */
+/* ==================================== */
+
+.section__convert {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-card {
+    display: grid;
+    grid-template: 50px 1fr 50px/ 1fr;
+    align-items: center;
+    width: 480px;
+    height: 300px;
+    background: var(--primary-card-convert);
+    border-radius: 25px;
+}
+
+.box-card .title{
+    padding: 10px 0px 0px 20px;
+}
+
+.title span {
+    color: var(--color-font-primary);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.08rem;
+}
+
+.content-swap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px 10px;
+}
+
+.token_1, .token_2 {
+    display: flex;
+    width: 100%;
+    background: var(--secondary-card-convert);
+    border-radius: 20px;
+    border: 1px solid rgb(44, 47, 54);
+}
+
+.token_1:hover, .token_2:hover {
+    border: 1px solid rgb(66, 67, 73);
+}
+
+.entries-inputs {
+    display: flex;
+    flex: 1 1 auto;
+    width: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px 35px 20px;
+}
+
+.button-dropdown:hover .dropdown{
+    display: block;
+}
+
+.button-dropdown button{
+    background: var(--primary-card-convert);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+    padding: 0px 10px;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--color-font-primary);
+    white-space: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 6px 10px;
+}
+
+.button-dropdown button:hover {
+    background-color: rgb(44, 47, 54);
+}
+
+.dropdown {
+    display: none;
+    border-radius: 16px;
+    position: absolute;
+    background: var(--primary-card-convert);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown span{
+    display: flex;
+    color: var(--color-font-primary);
+    text-decoration: none;
+    align-items: center;
+    width: 95px;
+    font-weight: 500;
+    padding: 5px 6px;
+    font-size: 16px;
+}
+
+.dropdown .found {
+    display: none;
+}
+
+.dropdown .token {
+    display: flex;
+    align-items: center;
+}
+
+#search svg {
+    height: 60%;
+    width: 60%;
+    display: flex;
+}
+
+#search input {
+    display: flex;
+    height: 30px;
+    color: var(--color-font-primary);
+    text-align: left;
+    background: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.dropdown span:hover {
+    cursor: pointer;
+    background-color: rgb(44, 47, 54);
+    border-radius: 16px;
+}
+
+.button-dropdown button img{
+    margin-right: 5px;
+}
+
+.button-dropdown button svg {
+    fill: var(--color-font-primary);
+    width: 24px;
+    height: 24px;
+    padding: 0px 5px;
+}
+
+.entries-inputs input {
+    border: medium none;
+    outline: currentColor none medium;
+    text-align: right;
+    overflow: hidden;
+    flex: 1 1 auto;
+    font-weight: 500;
+    font-size: 24px;
+    padding: 0px;
+    margin-left: 15px;
+    color: var(--color-font-primary);
+    background: var(--secondary-card-convert);
+}
+
+.output {
+    position: relative;
+    color:var(--color-font-strong);
+}
+
+.icon-swap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin: -13.5px 0px;
+    position: relative;
+    background-color: var(--secondary-card-convert);
+    border: 3px solid rgb(25, 27, 31);
+    border-radius: 11px;
+}
+
+.icon-swap svg {
+    fill: var(--color-font-primary);
+    height: 17px;
+    width: 17px;
+}
+
+.icon-swap svg:hover {
+    fill: var(--color-font-strong);
+}
+
+.btn-send {
+    justify-self: center;
+    height: 40px;
+    width: 200px;
+    background: var(--secondary-card-convert);
+    border-radius: 15px;
+    border: none;
+}
+
+.btn-send:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.btn-send span {
+    color: var(--color-font-primary);
+    font-size: 20px;
+}
+
+.btn-send:hover span {
+    color: var(--color-font-strong)
 }
