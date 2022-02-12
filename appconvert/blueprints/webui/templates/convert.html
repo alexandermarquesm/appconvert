@@ -12,7 +12,7 @@
             <div class="token_1">
                 <div class="entries-inputs">
                     <div class="button-dropdown 1">
-                        <button>
+                        <button class="choice-btn">
                             <img src="{{ url_for('static', filename='images/tokens/BTC.png') }}" width="28px"
                                 height="28px">
                             <span>BTC</span>
@@ -55,7 +55,7 @@
 
                         </div>
                     </div>
-                    <input name="amount" type="text" placeholder="0.0" maxlength="8">
+                    <input name="amount_1" type="text" placeholder="0.0" maxlength="8">
                 </div>
             </div>
             <div class="icon-swap">
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn-send">
+        <button id="btn-send">
             <span>Convert</span>
         </button>
     </div>

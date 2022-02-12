@@ -20,5 +20,6 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
 
 EXTENSIONS = [
     "appconvert.ext.database:init_app",
+    "appconvert.blueprints.restapi:init_app",
     "appconvert.blueprints.webui:init_app",
 ]

@@ -492,7 +492,7 @@ main {
     fill: var(--color-font-strong);
 }
 
-.btn-send {
+#btn-send {
     justify-self: center;
     height: 40px;
     width: 200px;
@@ -501,16 +501,16 @@ main {
     border: none;
 }
 
-.btn-send:hover {
+#btn-send:hover {
     cursor: pointer;
     transform: scale(1.01);
 }
 
-.btn-send span {
+#btn-send span {
     color: var(--color-font-primary);
     font-size: 20px;
 }
 
-.btn-send:hover span {
+#btn-send:hover span {
     color: var(--color-font-strong)
 }
