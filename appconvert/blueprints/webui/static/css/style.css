@@ -401,14 +401,29 @@ main {
     color: var(--color-font-primary);
     text-decoration: none;
     align-items: center;
-    width: 95px;
+    width: 90px;
     font-weight: 500;
     padding: 5px 6px;
     font-size: 16px;
 }
 
-.dropdown .found {
-    display: none;
+.result {
+    display: block;
+    z-index: 1;
+}
+
+.token_found {
+    display: flex;
+}
+
+.token_found img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.token_found span {
+    width: 50px;
 }
 
 .dropdown .token {
@@ -440,6 +455,7 @@ main {
 
 .button-dropdown button img{
     margin-right: 5px;
+    border-radius: 50%;
 }
 
 .button-dropdown button svg {

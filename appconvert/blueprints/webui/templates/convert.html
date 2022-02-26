@@ -13,9 +13,9 @@
                 <div class="entries-inputs">
                     <div class="button-dropdown 1">
                         <button class="choice-btn">
-                            <img src="{{ url_for('static', filename='images/tokens/BTC.png') }}" width="28px"
+                            <img src="{{ tokens[0].logo_url }}" title="{{ tokens[0].currency }}" width="28px"
                                 height="28px">
-                            <span>BTC</span>
+                            <span>{{ tokens[0].symbol }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
                                 fill="#000000">
                                 <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
@@ -38,24 +38,18 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <input type="text" id="search">
+                                <input type="text" class="input_1">
                             </span>
-
-                            <span class="found">
-                                <img src="" alt="" width="28" height="28">
-                                <span></span>
-                            </span>
-
+                            <div class="result"></div>
                             {% for token in tokens %}
-                            <span class="token">
-                                <img src="{{ url_for('static', filename=token['path_icon']) }}" width="28" height="28">
-                                <span>{{ token['name'] }}</span>
+                            <span class="token_found">
+                                <img src="{{ token.logo_url }}" title="{{ token.currency }}">
+                                <span>{{ token.symbol }}</span>
                             </span>
                             {% endfor %}
-
                         </div>
                     </div>
-                    <input name="amount_1" type="text" placeholder="0.0" maxlength="8">
+                    <input name="amount_1" type="text" placeholder="0.0" maxlength="8" autocomplete="off">
                 </div>
             </div>
             <div class="icon-swap">
@@ -68,9 +62,9 @@
                 <div class="entries-inputs">
                     <div class="button-dropdown 2">
                         <button class="choice-btn">
-                            <img src="{{ url_for('static', filename='images/tokens/USDT.png') }}" width="28px"
+                            <img src="{{ tokens[2].logo_url }}" title="{{ tokens[2].currency }}" width="28px"
                                 height="28px">
-                            <span>USDT</span>
+                            <span>{{ tokens[2].symbol }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
                                 fill="#000000">
                                 <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
@@ -93,16 +87,15 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <input type="text" id="search">
+                                <input type="text" class="input_2">
                             </span>
-
+                            <div class="result"></div>
                             {% for token in tokens %}
-                            <span class="token">
-                                <img src="{{ url_for('static', filename=token['path_icon']) }}" width="28" height="28">
-                                <span>{{ token['name'] }}</span>
+                            <span class="token_found">
+                                <img src="{{ token.logo_url }}" title="{{ token.currency }}">
+                                <span>{{ token.symbol }}</span>
                             </span>
                             {% endfor %}
-
                         </div>
                     </div>
                     <input name="amount_2" type="text" placeholder="0.0" disabled>

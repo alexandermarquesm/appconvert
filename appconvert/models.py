@@ -13,13 +13,17 @@ categories = db.Table(
 
 class Token(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), unique=True, nullable=False)
-    ticker = db.Column(db.String(6), unique=True, nullable=False)
-    price = db.Column(db.String(20), nullable=False)
-    marketcap = db.Column(db.String(15), nullable=False)
-    blockchain = db.Column(db.String(60), nullable=False)
-    address = db.Column(db.String(60), nullable=False)
-    site = db.Column(db.String(60), unique=True, nullable=False)
+    id_api = db.Column(db.String(8), unique=True, nullable=False)
+    currency = db.Column(db.String(8), unique=True, nullable=False)
+    symbol = db.Column(db.String(8), unique=False, nullable=False)
+    name = db.Column(db.String(25), unique=True, nullable=False)
+    logo_url = db.Column(db.String(85), nullable=False)
+
+    marketcap = db.Column(db.String(15), nullable=True)
+    price = db.Column(db.String(20), nullable=True)
+    blockchain = db.Column(db.String(60), nullable=True)
+    address = db.Column(db.String(60), nullable=True)
+    site = db.Column(db.String(60), nullable=True)
     categories = db.relationship(
         "Category",
         secondary=categories,

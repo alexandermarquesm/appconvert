@@ -1,4 +1,5 @@
 from flask import render_template
+from appconvert.models import Token
 
 
 def home():
@@ -6,7 +7,8 @@ def home():
 
 
 def convert():
-    return render_template("convert.html")
+    tokens = Token.query.filter(Token.symbol.in_(("BTC", "ETH", "USDT"))).all()
+    return render_template("convert.html", tokens=tokens)
 
 
 def cryptogames():
