@@ -18,16 +18,16 @@ arrows.forEach(arrow => {
 
 function arrowHeader(event) {
     event.preventDefault();
-    let scroll_x = categories.scrollLeft;
+    let scroll_x = parseInt(100 * categories.scrollLeft / (categories.scrollWidth - categories.clientWidth))
     let arrow_left = document.querySelector(".arrow-left");
     let arrow_right = document.querySelector(".arrow-right");
-    let space_scroll = 50
+    let space_scroll = 30
 
-    if (scroll_x < 50) {
+    if (scroll_x <= 6) {
         arrow_left.style.display = 'none';
     }
 
-    else if (scroll_x > 369) {
+    else if (scroll_x >= 88) {
         arrow_right.style.display = 'none';
     }
 
@@ -138,12 +138,6 @@ $('.token_found').bind('click', function () {
     el.find('.choice-btn')[0].children[1].innerText = text_content
 });
 
-// $('.menu__item').bind("click", function () {
-//     for (let i = 0; i < 3; i++) {
-//         $('.menu__item')[i].classList.remove('menu__item--selected')
-//     }
-//     $(this)[0].classList.toggle('menu__item--selected');
-// });
 
 function active() {
     li = document.querySelectorAll('.menu__item a');
