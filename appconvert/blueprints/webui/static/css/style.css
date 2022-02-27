@@ -179,6 +179,7 @@ main {
 .header__categories::-webkit-scrollbar {
     display: none;
     width: 0px;
+    scrollbar-width: 0px;
 }
 
 .header__item {
