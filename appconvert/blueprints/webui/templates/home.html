@@ -2,12 +2,10 @@
 <html lang="pt-BR">
 
 <head>
+    {% include 'imports.html' %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Helping people understand more about cryptocurrencies">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logos/favicon.png') }}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>app convert</title>
 
 </head>
@@ -15,16 +13,17 @@
 <body>
     <div class="container">
         <sidebar class="l-sidebar">
-            <img class="logotipo" src="{{ url_for('static', filename='images/logos/logotipo.png') }}" alt="logotipo">
+            <img class="logotipo" src="{{ url_for('static', filename='images/logos/logotipo.png') }}" width="163px"
+                hwight="65px" alt="logotipo">
             <ul class="menu">
-                <li class="menu__item menu__item--selected">
-                    <a class=" menu__link" href="#">Convert</a>
+                <li class="menu__item">
+                    <a class=" menu__link" href="/convert">Convert</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Defi</a>
+                    <a class="menu__link" href="/cryptogames">Games</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Games</a>
+                    <a class="menu__link" href="/defi">Defi</a>
                 </li>
             </ul>
         </sidebar>

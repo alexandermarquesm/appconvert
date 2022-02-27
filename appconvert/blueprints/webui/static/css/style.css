@@ -2,11 +2,6 @@
     --primary: #1E1E1E ;
     --secondary: #282828;
     --color-selected: #333333;
-    
-    /*
-    --primary-card-convert: #191b1f;
-    --secondary-card-convert: #212429;
-    */
 
     --primary-card-convert: #191b1f;
     --secondary-card-convert: #212429;
@@ -45,14 +40,16 @@
 /* ==================================== */ 
 
 .l-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100vh;
     background: var(--secondary);
 }
 
 .logotipo {
-    margin: 20px auto 0 auto;
-    height: 10vh;
-    width: 100%;
+    margin-top: 15px;
+    position: relative;
 }
 
 .menu {
@@ -64,6 +61,7 @@
     height: 35px;
     line-height: 35px;
     border-radius: 10px;
+    width: 150px;
 }
 
 .menu__item--selected{

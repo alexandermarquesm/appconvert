@@ -47,24 +47,30 @@ function arrowHeader(event) {
 }
 
 // Botão para converter moedas
-document.getElementById('btn-send').onclick = function () {
+$('#btn-send').bind('click', function () {
     var [token1, token2] = document.querySelectorAll('.choice-btn img');
     var amount = $("input[name='amount_1']").val();
-    if (amount < 1) {
-        amount = 1
+    if (amount.length != 0) {
+        if (amount < 1) {
+            amount = 1
+        }
+        if (token1.title === token2.title) {
+            $("input[name='amount_2']").val(amount);
+        } else {
+            $.ajax({
+                type: 'GET',
+                url: `/api/v1/convert/${token1.title}&${token2.title}&${amount}`,
+                dataType: "json",
+
+                success: function (response) {
+                    $("input[name='amount_2']").val(response['price']);
+                },
+            });
+        }
+    } else {
+        $("input[name='amount_2']").val('insert amount')
     }
-
-    $.ajax({
-        type: 'GET',
-        url: `/api/v1/convert/${token1.title}&${token2.title}&${amount}`,
-        dataType: "json",
-
-        success: function (response) {
-            $("input[name='amount_2']").val(response['price']);
-        },
-    });
-
-}
+})
 
 // Input de pesquisa de tokens
 $('#search input').bind("keyup", function () {
@@ -97,7 +103,9 @@ $('#search input').bind("keyup", function () {
             },
         });
         return false;
-    };
+    } else {
+        $(this).preventDefault();
+    }
 })
 
 // Resultado da pesquisa
@@ -116,7 +124,7 @@ $('.result').on('click', '.token_found', function () {
 });
 
 // Tokens iniciais
-$('.token_found').bind('click', '.token_found', function () {
+$('.token_found').bind('click', function () {
     th = $(this);
     el = $(this).closest('.button-dropdown');
     img_link = th.children()[0].src
@@ -129,3 +137,23 @@ $('.token_found').bind('click', '.token_found', function () {
 
     el.find('.choice-btn')[0].children[1].innerText = text_content
 });
+
+// $('.menu__item').bind("click", function () {
+//     for (let i = 0; i < 3; i++) {
+//         $('.menu__item')[i].classList.remove('menu__item--selected')
+//     }
+//     $(this)[0].classList.toggle('menu__item--selected');
+// });
+
+function active() {
+    li = document.querySelectorAll('.menu__item a');
+    for (let i = 0; i < li.length; i++) {
+        if (li[i].pathname == $(this)[0].location.pathname) {
+            li[i].classList.add('menu__item--selected')
+        } else {
+            li[i].classList.remove('menu__item--selected')
+        }
+    }
+}
+
+active()
