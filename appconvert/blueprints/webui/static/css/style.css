@@ -179,6 +179,9 @@ main {
 .header__categories::-webkit-scrollbar {
     display: none;
     width: 0px;
+}
+
+.header__categories {
     scrollbar-width: none;
 }
 
