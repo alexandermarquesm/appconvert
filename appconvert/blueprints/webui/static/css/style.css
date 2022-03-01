@@ -1,13 +1,21 @@
 :root {
-    --primary: #1E1E1E ;
-    --secondary: #282828;
+    --primary: #282828;
+    --secondary: #1E1E1E;
     --color-selected: #333333;
 
+    /* card cryptogames */
+    --bg-card-crypto: rgb(243, 243, 243);
+    --footer-card-crypto: rgba(255, 255, 255, 0.2);
+
+    /* card-convert */
     --primary-card-convert: #191b1f;
     --secondary-card-convert: #212429;
-    
+
+    /* color fonts */
     --color-font-primary: rgb(197, 197, 197);
     --color-font-strong: rgb(230, 230, 230);
+    --color-font-card: rgb(44, 44, 44);
+
     font-family: "Roboto";
     font-size: 1.3rem;
 }
@@ -245,7 +253,7 @@ main {
     height: 100%;
     width: 100%;
     position: absolute;
-    color: var(--color-font-primary);
+    color: var(--color-font-card);
     text-align: center;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -272,17 +280,18 @@ main {
 
 .card__footer {
     position: absolute;
-    background: var(--color-selected);
+    background: var(--footer-card-crypto);
     font-size: 18px;
     width: 100%;
     bottom: 0;
     height: 35px;
     line-height: 35px;
     border-radius: 0px 0px 25px 25px;
+    border-top: 1px solid var(--color-font-card);
 }
 
 .card__face--front, .card__face--back{
-    background: #282828;
+    background: var(--bg-card-crypto);
     border-radius: 25px;
     border: 1px solid rgba(95, 95, 95, 0.2);
 }
@@ -301,7 +310,7 @@ main {
 
 .card__face--back div span {
     font-size: 16px;
-    color: var(--color-font-primary);
+    color: var(--color-font-card);
 }
 
 /* ==================================== */
