@@ -3,10 +3,11 @@ DEBUG = false
 TITLE = 'appconvert'
 
 SQLALCHEMY_TRACK_MODIFICATIONS = false
-SQLALCHEMY_DATABASE_URI = ''
+SQLALCHEMY_DATABASE_URI = 'postgresql://mosfhfrhtsujwq:566417304804ef839f9cc297755684fedaeb3bf18a7da5e4d029e0b2c4bfd9f6@ec2-3-209-61-239.compute-1.amazonaws.com:5432/d7m0u514s6v15a'
 
 EXTENSIONS = [
     "appconvert.ext.database:init_app",
+    "appconvert.blueprints.restapi:init_app",
     "appconvert.blueprints.webui:init_app",
 ]
 
@@ -16,10 +17,11 @@ DEBUG = true
 TITLE = 'appconvert'
 
 SQLALCHEMY_TRACK_MODIFICATIONS = false
-SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
+SQLALCHEMY_DATABASE_URI = 'postgresql://mosfhfrhtsujwq:566417304804ef839f9cc297755684fedaeb3bf18a7da5e4d029e0b2c4bfd9f6@ec2-3-209-61-239.compute-1.amazonaws.com:5432/d7m0u514s6v15a'
 
 EXTENSIONS = [
     "appconvert.ext.database:init_app",
+    # "appconvert.ext.serialyzer:init_app",
     "appconvert.blueprints.restapi:init_app",
     "appconvert.blueprints.webui:init_app",
 ]

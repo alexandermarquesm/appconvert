@@ -15,18 +15,9 @@
         </div>
         <div class="header__categories">
             <ol class="header__lista">
-                <li class="header__item header__item--style">metaverse</li>
-                <li class="header__item header__item--style">metaverse</li>
-                <li class="header__item header__item--style">NFT</li>
-                <li class="header__item header__item--style">Play to Earn</li>
-                <li class="header__item header__item--style">Play to Earn</li>
-                <li class="header__item header__item--style">Play to Earn</li>
-                <li class="header__item header__item--style">Play to Earn</li>
-                <li class="header__item header__item--style">Play to Earn</li>
-                <li class="header__item header__item--style">Play to Earn</li>
-                <li class="header__item header__item--style">Play to Earn</li>
-                <li class="header__item header__item--style">Play to Earn</li>
-                <li class="header__item header__item--style">Play to Earn</li>
+                {% for category in categories %}
+                <li class="header__item header__item--style">{{ category.name }}</li>
+                {% endfor %}
             </ol>
         </div>
         <div class="header__arrow arrow-right">
@@ -41,93 +32,34 @@
 </header>
 <section class="section__cryptogames">
     <div class="cards">
-
+        {% for token in tokens %}
         <div class="scene scene--card">
             <div class="card">
                 <div class="card__face card__face--front">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/SAND2.svg" alt="">
-                    <span class="card__name">The Sandbox</span>
+                    <img src="{{ token.logo_url }}" alt="">
+                    <span class="card__name">{{ token.name }}</span>
                     <div class="card__footer">
-                        <span>$2.91</span>
+                        <span>${{ token.price }}</span>
                     </div>
                 </div>
 
                 <div class="card__face card__face--back">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/SAND2.svg" alt="">
+                    <img src="{{ token.logo_url }}" alt="">
                     <div class="card__index">
-                        <span>ticker</span>
-                        <span>address</span>
-                        <span>marketcap</span>
-                        <span>blockchain</span>
+                        <span>Symbol</span>
+                        <span>Marketcap</span>
+                        <span>Blockchain</span>
                     </div>
 
                     <div class="card__info">
-                        <span>SAND</span>
-                        <span>copy</span>
-                        <span>2.300 M</span>
-                        <span>ethereum</span>
+                        <span>{{ token.currency }}</span>
+                        <span>{{ token.marketcap }}</span>
+                        <span>{{ token.blockchain }}</span>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="scene scene--card">
-            <div class="card">
-                <div class="card__face card__face--front">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/AXS2.jpg" alt="">
-                    <span class="card__name">Axie Infinity</span>
-                    <div class="card__footer">
-                        <span>$47.68</span>
-                    </div>
-                </div>
-
-                <div class="card__face card__face--back">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/AXS2.jpg" alt="">
-                    <div class="card__index">
-                        <span>ticker</span>
-                        <span>address</span>
-                        <span>marketcap</span>
-                        <span>blockchain</span>
-                    </div>
-
-                    <div class="card__info">
-                        <span>AXS</span>
-                        <span>copy</span>
-                        <span>3.500 M</span>
-                        <span>ethereum</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="scene scene--card">
-            <div class="card">
-                <div class="card__face card__face--front">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/mana.svg" alt="">
-                    <span class="card__name">Decentraland</span>
-                    <div class="card__footer">
-                        <span>$2.53</span>
-                    </div>
-                </div>
-
-                <div class="card__face card__face--back">
-                    <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/mana.svg" alt="">
-                    <div class="card__index">
-                        <span>ticker</span>
-                        <span>address</span>
-                        <span>marketcap</span>
-                        <span>blockchain</span>
-                    </div>
-
-                    <div class="card__info">
-                        <span>MANA</span>
-                        <span>copy</span>
-                        <span>4.600 M</span>
-                        <span>ethereum</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock %}

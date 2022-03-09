@@ -28,7 +28,7 @@
 
 /* ==================================== */
 /* ESTRUTURA DA PAGINA*/
-/* ==================================== */  
+/* ==================================== */
 
 .container {
     width: 100vw;
@@ -45,7 +45,7 @@
 
 /* ==================================== */
 /* SIDEBAR */
-/* ==================================== */ 
+/* ==================================== */
 
 .l-sidebar {
     display: flex;
@@ -228,7 +228,7 @@ main {
     gap: 42px 42px;
     padding: 45px 45px;
 }
-  
+
 .scene {
     width: 180px;
     height: 130px;
@@ -310,6 +310,8 @@ main {
 
 .card__face--back div span {
     font-size: 16px;
+    line-height: 25px;
+    pointer-events: none;
     color: var(--color-font-card);
 }
 

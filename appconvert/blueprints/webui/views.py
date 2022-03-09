@@ -1,5 +1,6 @@
 from flask import render_template
-from appconvert.models import Token
+from appconvert.models import Token, Category
+from numerize import numerize
 
 
 def home():
@@ -12,7 +13,10 @@ def convert():
 
 
 def cryptogames():
-    return render_template("cryptogames.html")
+    tokens = [token for token in Token.query.all() if token.categories]
+    categories = Category.query.all()
+
+    return render_template("cryptogames.html", tokens=tokens, categories=categories)
 
 
 def defi():
