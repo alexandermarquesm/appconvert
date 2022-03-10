@@ -3,9 +3,13 @@
     --secondary: #1E1E1E;
     --color-selected: #333333;
 
+    /* border selected */
+    --border-color-normal: rgb(44, 47, 54);
+    --border-color-selected: rgb(66, 67, 73);
+
     /* card cryptogames */
     --bg-card-crypto: rgb(243, 243, 243);
-    --footer-card-crypto: rgba(255, 255, 255, 0.2);
+    --footer-card-crypto: rgba(70, 56, 56, 0.2);
 
     /* card-convert */
     --primary-card-convert: #191b1f;
@@ -207,6 +211,12 @@ main {
     background: var(--color-selected);
 }
 
+.header__item--active {
+    transition: 0.3s;
+    color: black;
+    background: var(--bg-card-crypto);
+}
+
 /* ==================================== */
 /* MAIN SECTION CRYPTOGAMES */
 /* ==================================== */
@@ -280,7 +290,7 @@ main {
 
 .card__footer {
     position: absolute;
-    background: var(--footer-card-crypto);
+    background: var(--card-crypto);
     font-size: 18px;
     width: 100%;
     bottom: 0;
