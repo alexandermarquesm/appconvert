@@ -46,6 +46,7 @@ function arrowHeader(event) {
 
 }
 
+
 // Botão para converter moedas
 $('#btn-send').bind('click', function () {
     var [token1, token2] = document.querySelectorAll('.choice-btn img');
@@ -71,6 +72,7 @@ $('#btn-send').bind('click', function () {
         $("input[name='amount_2']").val('insert amount')
     }
 })
+
 
 // Input de pesquisa de tokens
 $('#search input').bind("keyup", function () {
@@ -108,6 +110,7 @@ $('#search input').bind("keyup", function () {
     }
 })
 
+
 // Resultado da pesquisa
 $('.result').on('click', '.token_found', function () {
     th = $(this);
@@ -122,6 +125,7 @@ $('.result').on('click', '.token_found', function () {
 
     el.find('.choice-btn')[0].children[1].innerText = text_content
 });
+
 
 // Tokens iniciais
 $('.token_found').bind('click', function () {
@@ -139,6 +143,7 @@ $('.token_found').bind('click', function () {
 });
 
 
+// sidebar active
 function active() {
     li = document.querySelectorAll('.menu__item a');
     for (let i = 0; i < li.length; i++) {
@@ -151,3 +156,62 @@ function active() {
 }
 
 active()
+
+
+// active header item
+$('.header__item').bind('click', function () {
+    elementClicked = $(this)
+    let elements = document.querySelectorAll('.header__item');
+    elements.forEach(element => {
+        if (element === elementClicked[0]) {
+            elementClicked[0].classList.toggle('header__item--active');
+            if (elementClicked.hasClass('header__item--active')) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/v1/category/' + $(this)[0].innerText,
+                    dataType: "json",
+
+                    success: function (response) {
+                        if (response['tokens'].length) {
+                            var data = ''
+                            response['tokens'].forEach(token => {
+                                data += `<div class="scene scene--card">
+                                <div class="card">
+                                    <div class="card__face card__face--front">
+                                        <img src="${token['logo_url']}" alt="">
+                                        <span class="card__name">${token['name']}</span>
+                                        <div class="card__footer">
+                                            <span>${token['price']}</span>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card__face card__face--back">
+                                        <img src="${token['logo_url']}" alt="">
+                                        <div class="card__index">
+                                            <span>Symbol</span>
+                                            <span>Marketcap</span>
+                                            <span>Blockchain</span>
+                                        </div>
+                    
+                                        <div class="card__info">
+                                            <span>${token['currency']}</span>
+                                            <span>${token['marketcap']}</span>
+                                            <span>${token['blockchain']}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
+                            })
+                            $('.cards').html(data);
+                        };
+                    },
+                    error: function (response) {
+                        console.log(response);
+                    },
+                });
+            }
+        } else {
+            element.classList.toggle('header__item--active', false);
+        }
+    });
+})
