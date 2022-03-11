@@ -7,6 +7,7 @@ SQLALCHEMY_DATABASE_URI = 'postgresql://mosfhfrhtsujwq:566417304804ef839f9cc2977
 
 EXTENSIONS = [
     "appconvert.ext.database:init_app",
+    "appconvert.ext.serialyzer:init_app",
     "appconvert.blueprints.restapi:init_app",
     "appconvert.blueprints.webui:init_app",
 ]
@@ -21,7 +22,7 @@ SQLALCHEMY_DATABASE_URI = 'postgresql://mosfhfrhtsujwq:566417304804ef839f9cc2977
 
 EXTENSIONS = [
     "appconvert.ext.database:init_app",
-    # "appconvert.ext.serialyzer:init_app",
+    "appconvert.ext.serialyzer:init_app",
     "appconvert.blueprints.restapi:init_app",
     "appconvert.blueprints.webui:init_app",
 ]

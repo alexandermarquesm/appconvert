@@ -1,6 +1,5 @@
 from flask_marshmallow import Marshmallow
 from marshmallow import Schema
-from numerize import numerize
 
 ma = Marshmallow()
 

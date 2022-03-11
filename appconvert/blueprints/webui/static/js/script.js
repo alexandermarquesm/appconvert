@@ -1,9 +1,72 @@
-// Flip card
-const cards = document.querySelectorAll('.card');
+active()
 
-cards.forEach(card => card.addEventListener('click', event => {
-    event.target.classList.toggle('is-flipped');
-}));
+
+// When cards are loaded
+$('.cards').on('click', '.card', function () {
+    if (!$(this).hasClass('is-flipped')) {
+        $(this)[0].classList.add('is-flipped');
+    } else {
+        $(this)[0].classList.remove('is-flipped');
+    }
+})
+
+
+// category header make request with ajax jquery
+$('.header__item').bind('click', function () {
+    let elements = document.querySelectorAll('.header__item');
+    elements.forEach(element => {
+        if (element === $(this)[0]) {
+            $(this)[0].classList.toggle('header__item--active');
+            if ($(this).hasClass('header__item--active')) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/v1/category/' + $(this)[0].innerText,
+                    dataType: "json",
+
+                    success: function (response) {
+                        if (response['tokens'].length) {
+                            var data = ''
+                            response['tokens'].forEach(token => {
+                                data += `<div class="scene scene--card">
+                                        <div class="card">
+                                            <div class="card__face card__face--front">
+                                                <img src="${token['logo_url']}" alt="">
+                                                <span class="card__name">${token['name']}</span>
+                                                <div class="card__footer">
+                                                    <span>$${token['price']}</span>
+                                                </div>
+                                            </div>
+                            
+                                            <div class="card__face card__face--back">
+                                                <img src="${token['logo_url']}" alt="">
+                                                <div class="card__index">
+                                                    <span>Symbol</span>
+                                                    <span>Marketcap</span>
+                                                    <span>Blockchain</span>
+                                                </div>
+                            
+                                                <div class="card__info">
+                                                    <span>${token['currency']}</span>
+                                                    <span>${token['marketcap']}</span>
+                                                    <span>${token['blockchain']}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`
+                            })
+                            $('.cards').html(data);
+                        };
+                    },
+                    error: function (response) {
+                        console.log(response);
+                    },
+                });
+            }
+        } else {
+            element.classList.toggle('header__item--active', false);
+        }
+    })
+})
 
 
 // Rolar categorias pelo scroll e clicando nos botões
@@ -154,64 +217,3 @@ function active() {
         }
     }
 }
-
-active()
-
-
-// active header item
-$('.header__item').bind('click', function () {
-    elementClicked = $(this)
-    let elements = document.querySelectorAll('.header__item');
-    elements.forEach(element => {
-        if (element === elementClicked[0]) {
-            elementClicked[0].classList.toggle('header__item--active');
-            if (elementClicked.hasClass('header__item--active')) {
-                $.ajax({
-                    type: 'GET',
-                    url: '/api/v1/category/' + $(this)[0].innerText,
-                    dataType: "json",
-
-                    success: function (response) {
-                        if (response['tokens'].length) {
-                            var data = ''
-                            response['tokens'].forEach(token => {
-                                data += `<div class="scene scene--card">
-                                <div class="card">
-                                    <div class="card__face card__face--front">
-                                        <img src="${token['logo_url']}" alt="">
-                                        <span class="card__name">${token['name']}</span>
-                                        <div class="card__footer">
-                                            <span>${token['price']}</span>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="card__face card__face--back">
-                                        <img src="${token['logo_url']}" alt="">
-                                        <div class="card__index">
-                                            <span>Symbol</span>
-                                            <span>Marketcap</span>
-                                            <span>Blockchain</span>
-                                        </div>
-                    
-                                        <div class="card__info">
-                                            <span>${token['currency']}</span>
-                                            <span>${token['marketcap']}</span>
-                                            <span>${token['blockchain']}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`
-                            })
-                            $('.cards').html(data);
-                        };
-                    },
-                    error: function (response) {
-                        console.log(response);
-                    },
-                });
-            }
-        } else {
-            element.classList.toggle('header__item--active', false);
-        }
-    });
-})
