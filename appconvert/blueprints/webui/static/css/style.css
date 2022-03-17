@@ -226,6 +226,7 @@ main {
     height: 85vh;
     overflow: auto;
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .section__cryptogames::-webkit-scrollbar {
@@ -235,8 +236,8 @@ main {
 .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 42px 42px;
-    padding: 45px 45px;
+    gap: 45px 3vw;
+    margin: 45px 45px;
 }
 
 .scene {
