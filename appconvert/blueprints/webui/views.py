@@ -1,6 +1,5 @@
 from flask import render_template
 from appconvert.models import Token, Category
-from numerize import numerize
 
 
 def home():
