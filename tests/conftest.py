@@ -1,7 +1,7 @@
 import pytest
-from appconvert.app import minimal_app, create_app
+from appconvert.app import create_app
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope='session')
 def app():
     app = create_app()
-    return app
+    yield app
