@@ -16,8 +16,8 @@ def valid_get_price(token1: str, token2: str, amount: float) -> Dict:
     url = f"https://api.nomics.com/v1/currencies/ticker?key={os.environ.get('SECRET_KEY_NOMICS_API')}&ids={token1}&interval=1d&convert={token2}&per-page=1"
     resp_json = make_request(url=url).json()
     if resp_json:
-        return {"price": float(resp_json[0]["price"]) * amount}
-    return {"price": None}
+        return float(resp_json[0]["price"]) * amount
+    return None
 
 
 def token_is_valid(token: str) -> Dict:

@@ -5,11 +5,8 @@ from appconvert.models import Category
 
 
 class GetTokensByCategory(Resource):
-    def get(self, category: str):
-        return jsonify(
-            {
-                "tokens": tokens_schema.dump(
-                    Category.query.filter_by(name=category).first().tokens
-                )
-            }
-        )
+    def get(self, category: str) -> dict:
+        resource_category = Category.query.filter_by(name=category).first()
+        if resource_category:
+            return jsonify(tokens=tokens_schema.dump(resource_category.tokens))
+        return jsonify(price=None)
