@@ -1,8 +1,11 @@
 import pickle
-from typing import Dict
-import requests
 import time
+from typing import Dict
+
+import requests
+
 from config import settings
+
 
 def make_request(url: str):
     response = requests.get(url)

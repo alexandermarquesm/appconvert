@@ -1,5 +1,6 @@
 from flask import render_template
-from appconvert.models import Token, Category
+
+from appconvert.models import Category, Token
 
 
 def home():

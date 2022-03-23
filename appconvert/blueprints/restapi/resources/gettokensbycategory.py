@@ -1,5 +1,6 @@
-from flask_restful import Resource
 from flask import jsonify
+from flask_restful import Resource
+
 from appconvert.ext.serialyzer import tokens_schema
 from appconvert.models import Category
 

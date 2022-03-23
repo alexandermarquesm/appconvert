@@ -1,12 +1,13 @@
 from appconvert.ext.database import db
-from enum import unique
-
 
 categories = db.Table(
     "categories",
     db.Column("token_id", db.Integer, db.ForeignKey("token.id"), primary_key=True),
     db.Column(
-        "category_id", db.Integer, db.ForeignKey("category.id"), primary_key=True
+        "category_id",
+        db.Integer,
+        db.ForeignKey("category.id"),
+        primary_key=True,
     ),
 )
 
