@@ -24,7 +24,7 @@
 <div align="center">
   <h4>/cryptogames</h4>
   <p>Nesta aba estará contido tokens de jogos baseado em suas categorias no mercado e será possível filtrar quais categorias você quiser</p>
-  <img height="500" src="https://user-images.githubusercontent.com/45858958/156349853-4648ee94-aff9-4530-8331-258f7ace3a63.png">
+  <img height="500" src="https://user-images.githubusercontent.com/45858958/159735281-57389775-cabb-4c72-ba2e-4141adf27b7f.png">
 </div>
 
 
